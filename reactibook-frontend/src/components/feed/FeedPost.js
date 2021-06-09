@@ -10,7 +10,7 @@ export const FeedPost = ({id, content, date, fileUrl, author}) => {
 
     const postDate = moment(date);
 
-    const { userId } = useSelector( state => state.auth );
+    const { uid } = useSelector( state => state.auth );
 
     const dispatch = useDispatch();
 
@@ -115,7 +115,7 @@ export const FeedPost = ({id, content, date, fileUrl, author}) => {
                 </div>
                 
                 {
-                    (userId === author.id) &&
+                    (uid === author.id) &&
                     (<div className="w-full flex items-start px-3 text-sm underline">
                         <span 
                             className="pr-2 cursor-pointer"

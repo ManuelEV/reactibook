@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useEffect, useState } from 'react'
 import { useSelector } from 'react-redux';
 import { NavBar } from '../navigation/NavBar'
 import { FeedPost } from './FeedPost';
@@ -8,11 +8,15 @@ export const FeedScreen = () => {
 
     const {posts} = useSelector( state => state.posts );
 
-    const [filteredPosts, setPosts] = useState(posts);
+    const [filteredPosts, setFilteredPosts] = useState(posts);
 
     const handleFilterPosts = (filterCondition) => {
-        setPosts( posts.filter(post => post.visibility === filterCondition) );
+        setFilteredPosts( posts.filter(post => post.visibility === filterCondition) );
     }
+
+    useEffect(() => {
+        setFilteredPosts(posts);
+    }, [posts]);
 
     return (
         <div className="w-full h-full">
@@ -39,7 +43,7 @@ export const FeedScreen = () => {
                         </span>
                         <span 
                             className="px-2 underline cursor-pointer"
-                            onClick={() => setPosts(posts)}
+                            onClick={() => setFilteredPosts(posts)}
                         >
                             Ver todo
                         </span>
