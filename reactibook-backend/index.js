@@ -10,7 +10,7 @@ const app = express();
 dbConnection();
 
 
-app.use(cors())
+app.use(cors());
 
 
 app.use( express.static('public') );

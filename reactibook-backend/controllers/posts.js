@@ -18,8 +18,6 @@ const createPost = async (req, res = response) => {
 
 	const post = new Post(req.body);
 
-	console.log(post);
-
 	try {
 		const savedPost = await post.save();
 

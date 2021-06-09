@@ -17,9 +17,6 @@ const router = Router();
 
 
 
-// to use a middleware on all requests bellow: router.use(validateJWT);
-
-
 router.get('/', getPosts);
 
 
@@ -27,6 +24,7 @@ router.get('/', getPosts);
 router.post('/',
  [
  	check('content', 'El título es obligatorio').not().isEmpty(),
+   check('visibility', 'La visibilidad del post es obligatoria').not().isEmpty(),
  	check('date', 'Formato de fecha no válido').custom(isDate),
  	validateFields,
  ], 

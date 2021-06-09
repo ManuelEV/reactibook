@@ -14,6 +14,10 @@ const PostSchema = Schema({
         type: String,
         required: false,
     },
+    visibility: {
+        type: String,
+        required: true,
+    },
     author: {
         id: String,
         name: String,
