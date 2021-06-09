@@ -1,13 +1,51 @@
 import React, { useState } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
+import moment from 'moment';
+import 'moment/locale/es';
+import { startDeleting, startUpdatingPost } from '../../actions/posts';
 
-export const FeedPost = () => {
+export const FeedPost = ({id, content, date, fileUrl, author}) => {
 
-    const postContent = 'ASDASDASDASDASDASDASDASDAD';
+    moment().locale('es');
+
+    const postDate = moment(date);
+
+    const { userId } = useSelector( state => state.auth );
+
+    const dispatch = useDispatch();
 
     const [editionMode, setEditionMode] = useState(false);
 
-    const handleEditionMode = (newEditionMode) => {
-        setEditionMode(newEditionMode);
+    const [editedPostContent, setEditedPostContent] = useState(content);
+
+    const handleInputChange = (e) => {
+        setEditedPostContent(e.target.value);
+    }
+
+    const [formErrorMsg, setformErrorMsg] = useState('');
+
+    const isFormValid = () => {
+
+        if ( content === editedPostContent ) {
+            setformErrorMsg('El contenido del post no debe ser el mismo que el anterior');
+            return false;
+        } else if ( editedPostContent.trim().length === 0 ) {
+            setformErrorMsg('El contenido del post no debe estar vacío');
+            return false;
+        }          
+
+        return true;
+    }
+
+    const handlePostUpdate = () => {
+        if (isFormValid()) {
+            dispatch(startUpdatingPost(id, {content: editedPostContent}));
+            setEditionMode(false);
+        }
+    }
+
+    const handlePostDelete = () => {
+        dispatch(startDeleting(id));
     }
 
     return (
@@ -22,57 +60,77 @@ export const FeedPost = () => {
                             src="./assets/user.svg" alt="user_profile"
                     />
                     <div className="grid grid-cols-1 ml-3">
-                        <div className="text-xl font-semibold">Juan</div>
-                        <div className="text-sm">Hoy 10:00</div>
+                        <div className="text-xl font-semibold">{author.name}</div>
+                        <div className="text-sm">{postDate.calendar()}</div>
                     </div>
                 </div>
 
                 
                 {
                     editionMode ? (
-                        <form className="w-full">
+                        <div className="w-full">
                             <textarea 
                                 className="w-full rounded flex items-start p-2 text-black resize-none"
                                 type="textarea"
                                 autoComplete="off"
                                 placeholder="¿Qué está pasando?"
-                                value={postContent}
+                                name="editedPostContent"
+                                value={editedPostContent}
+                                onChange={handleInputChange}
                             >
                             </textarea>
+                            <span className="text-red-500 text-sm">
+                                {formErrorMsg}
+                            </span>
                             <div className="w-full flex justify-end px-3 text-sm underline">
                                 <span 
                                     className="pr-2 cursor-pointer"
-                                    onClick={() => handleEditionMode(false)}
+                                    onClick={() => setEditionMode(false)}
                                 >
                                     Cancelar
                                 </span>
-                                <span className="cursor-pointer">
+                                <span
+                                    className="cursor-pointer"
+                                    onClick={handlePostUpdate}
+                                >
                                     Guardar
                                 </span>
                             </div>
-                        </form>
+                        </div>
                     )
 
                     : (
                         <div 
                             className="w-full rounded flex items-start p-2"
                         >
-                            {postContent}
+                            {content}
                         </div>
                     )
                 }
-                
-                <div className="w-full flex items-start px-3 text-sm underline">
-                    <span 
-                        className="pr-2 cursor-pointer"
-                        onClick={() => handleEditionMode(true)}
-                    >
-                        Editar
-                    </span>
-                    <span className="cursor-pointer">
-                        Eliminar
-                    </span>
+
+                <div 
+                    className="w-full flex justify-center"
+                >
+                    <img src={fileUrl} alt="" />
                 </div>
+                
+                {
+                    (userId === author.id) &&
+                    (<div className="w-full flex items-start px-3 text-sm underline">
+                        <span 
+                            className="pr-2 cursor-pointer"
+                            onClick={() => setEditionMode(true)}
+                        >
+                            Editar
+                        </span>
+                        <span
+                            className="cursor-pointer"
+                            onClick={handlePostDelete}
+                        >
+                            Eliminar
+                        </span>
+                    </div>)
+                }
             </div>
         </div>
     )
