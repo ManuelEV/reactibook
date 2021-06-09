@@ -1,8 +1,9 @@
 import React from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-
+import validator from 'validator';
 import { Link } from 'react-router-dom'
 import { startGoogleLogin, startLoginEmailPassword } from '../../actions/auth';
+import { removeLoginError, setLoginError } from '../../actions/ui';
 import { useForm } from '../../hooks/useForm';
 
 export const LoginScreen = () => {
@@ -20,13 +21,43 @@ export const LoginScreen = () => {
 
     const handleLogin = (e) => {
         e.preventDefault();
-
-        dispatch(startLoginEmailPassword(email, password));
+        if(isFormValid()){
+            dispatch(startLoginEmailPassword(email, password));
+        }
     };
 
     const handleGoogleLogin = () => {
-        dispatch(startGoogleLogin());
+        if(isFormValid()){
+            dispatch(startGoogleLogin());
+        }
     }
+
+    
+    const isFormValid = () => {
+        const errors = {};
+        let isValid = true;
+
+
+        if ( !validator.isEmail( email ) ){
+            errors['emailMsg'] = 'El email no es válido';
+            isValid = false;
+        }
+        
+        if (password.length < 5 ){
+            errors['passwordMsg'] = 'La contraseña debe ser de al menos 6 caracteres';
+            isValid = false;
+        }
+
+        if (isValid) {
+            dispatch( removeLoginError() );
+        } else {
+            dispatch(setLoginError(errors));
+        }
+
+        return isValid;
+    };
+
+    const { emailMsg, passwordMsg } = useSelector( state => state.ui.loginErrors );
 
     return (
         <div className="w-screen h-screen flex justify-center items-center text-white bg-gray-800">
@@ -53,6 +84,9 @@ export const LoginScreen = () => {
                         value={email}
                         onChange={handleInputChange}
                     />
+                    <span className="text-sm text-red-500">
+                        {emailMsg}
+                    </span>
                 </div>
 
                 <div className="pt-2">
@@ -70,6 +104,9 @@ export const LoginScreen = () => {
                         value={password}
                         onChange={handleInputChange}
                     />
+                    <span className="text-sm text-red-500">
+                        {passwordMsg}
+                    </span>
                 </div>
 
 

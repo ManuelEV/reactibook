@@ -19,4 +19,7 @@ export const types = {
     postsLogoutCleaning: '[Posts] Logout Cleaning',
     postsCurrentFileUrl: '[Posts] Current File Url',
 
+    uiSetLoginError: '[UI] Set Login Error',
+    uiRemoveLoginError: '[UI] Remove Login Error',
+
 }

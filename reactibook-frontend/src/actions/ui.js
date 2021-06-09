@@ -18,3 +18,12 @@ export const startLoading = () => ({
 export const finishLoading = () => ({
     type: types.uiFinishLoading,
 })
+
+export const setLoginError = ( err ) => ({
+    type: types.uiSetLoginError,
+    payload: err
+});
+
+export const removeLoginError = ( ) => ({
+    type: types.uiRemoveError,
+});

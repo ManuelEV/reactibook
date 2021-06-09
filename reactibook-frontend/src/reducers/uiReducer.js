@@ -3,6 +3,10 @@ import { types } from '../types/types';
 const initialState = {
     loading: false,
     msgError: null,
+    loginErrors: {
+        emailMsg: '',
+        passwordMsg: '',
+    }
 }
 
 export const uiReducer = (state = initialState, action) => {
@@ -18,6 +22,20 @@ export const uiReducer = (state = initialState, action) => {
             return {
                 ...state,
                 msgError: null,
+            }
+        case types.uiSetLoginError:
+            return {
+                ...state,
+                loginErrors: {
+                    ...initialState.loginErrors,
+                    ...action.payload,
+                },
+            }
+
+            case types.uiRemoveLoginError:
+            return {
+                ...state,
+                loginErrors: initialState.loginErrors,
             }
         
         case types.uiStartLoading:
