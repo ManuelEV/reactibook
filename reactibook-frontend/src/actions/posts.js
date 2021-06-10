@@ -32,15 +32,6 @@ export const startNewPost = (content, visibility) => {
     }
 }
 
-
-export const activeNote = (id, note) => ({
-    type: types.notesActive,
-    payload: {
-        id,
-        ...note,
-    }  
-})
-
 export const addNewPost = (newPost) => ({
     type: types.postsAddNew,
     payload: {
@@ -96,8 +87,6 @@ export const updateCurrentFileUrl = (fileUrl) => ({
 export const startUploading = (file) => {
     return async (dispatch, getState) => {
 
-        // const {active:activeNote} = getState().notes;
-
         Swal.fire({
             title: 'Uploading',
             text: 'Please wait',
@@ -107,8 +96,6 @@ export const startUploading = (file) => {
         Swal.showLoading();
 
         const fileUrl = await fileUpload(file);
-
-        //activeNote.url = fileUrl;
 
         dispatch(updateCurrentFileUrl(fileUrl));
         

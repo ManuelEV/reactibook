@@ -1,0 +1,460 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in <FeedScreen/> snapshot should match 1`] = `
+<div
+  className="w-full h-full"
+>
+  <div
+    className="flex flex-row p-4 bg-gray-700 w-full fixed
+ bg-gradient-to-b from-primary-400 to-primary-600"
+  >
+    <div
+      className="w-2/3 text-xl tracking-wide font-semibold"
+    >
+      <span
+        className="cursor-pointer"
+        onClick={[Function]}
+      >
+        REACTIBOOK
+      </span>
+    </div>
+    <div
+      className="w-1/3 flex justify-end"
+    >
+      <div
+        className="bg-primary-600 px-2 py-1 mx-2"
+      >
+        test
+      </div>
+      <button
+        className="bg-secondary-500 rounded font-bold px-2 py-1"
+        onClick={[Function]}
+      >
+        Logout
+      </button>
+    </div>
+  </div>
+  <div
+    className="pt-16"
+  >
+    <div
+      className="w-full flex justify-center"
+    >
+      <form
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+        onSubmit={[Function]}
+      >
+        <textarea
+          autoComplete="off"
+          className="w-full rounded flex items-start p-2 text-black resize-none"
+          name="content"
+          onChange={[Function]}
+          placeholder="¿Qué está pasando?"
+          type="textarea"
+          value=""
+        />
+        <span
+          className="text-sm text-red-500"
+        />
+        <div
+          className="w-full flex row mt-2 mx-2"
+        >
+          <div
+            className="w-1/3 flex items-start"
+          >
+            <input
+              accept="image/png, image/jpeg"
+              className=""
+              id="fileSelector"
+              name="file"
+              onChange={[Function]}
+              style={
+                Object {
+                  "display": "none",
+                }
+              }
+              type="file"
+            />
+            <button
+              className="bg-gray-200 text-black px-3 py-1 rounded"
+              onClick={[Function]}
+            >
+              Subir imagen
+            </button>
+          </div>
+          <div
+            className="w-2/3 flex justify-end"
+          >
+            <select
+              className="mr-2 text-black"
+              name="visibility"
+              onChange={[Function]}
+              value="friends"
+            >
+              <option
+                value="friends"
+              >
+                Amigos
+              </option>
+              <option
+                value="public"
+              >
+                Público
+              </option>
+            </select>
+            <button
+              className="bg-primary-600 rounded px-2 text-white
+ hover:bg-primary-500"
+              type="submit"
+            >
+              publicar
+            </button>
+          </div>
+        </div>
+      </form>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="w-3/5 flex row"
+      >
+        <span
+          className="px-2 underline cursor-pointer"
+          onClick={[Function]}
+        >
+          Público
+        </span>
+        <span
+          className="px-2 underline cursor-pointer"
+          onClick={[Function]}
+        >
+          Amigos
+        </span>
+        <span
+          className="px-2 underline cursor-pointer"
+          onClick={[Function]}
+        >
+          Ver todo
+        </span>
+      </div>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+      >
+        <div
+          className="flex row mb-2"
+        >
+          <img
+            alt="user_profile"
+            className="h-14 w-14"
+            src="./assets/user.svg"
+          />
+          <div
+            className="grid grid-cols-1 ml-3"
+          >
+            <div
+              className="text-xl font-semibold"
+            >
+              Manuel Espinoza
+            </div>
+            <div
+              className="text-sm"
+            >
+              ayer a las 15:58
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full rounded flex items-start p-2"
+        >
+          bojack horseman
+        </div>
+        <div
+          className="w-full flex justify-center"
+        >
+          <img
+            alt=""
+            src="https://res.cloudinary.com/manuelev/image/upload/v1623268724/qcwdk8we04sql2kdukza.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+      >
+        <div
+          className="flex row mb-2"
+        >
+          <img
+            alt="user_profile"
+            className="h-14 w-14"
+            src="./assets/user.svg"
+          />
+          <div
+            className="grid grid-cols-1 ml-3"
+          >
+            <div
+              className="text-xl font-semibold"
+            >
+              Manuel Espinoza
+            </div>
+            <div
+              className="text-sm"
+            >
+              ayer a las 3:37
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full rounded flex items-start p-2"
+        >
+          Probando post con imagen
+        </div>
+        <div
+          className="w-full flex justify-center"
+        >
+          <img
+            alt=""
+            src="https://res.cloudinary.com/manuelev/image/upload/v1623224234/xnzken0blhp8thkgdgee.jpg"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+      >
+        <div
+          className="flex row mb-2"
+        >
+          <img
+            alt="user_profile"
+            className="h-14 w-14"
+            src="./assets/user.svg"
+          />
+          <div
+            className="grid grid-cols-1 ml-3"
+          >
+            <div
+              className="text-xl font-semibold"
+            >
+              Juanito
+            </div>
+            <div
+              className="text-sm"
+            >
+              ayer a las 3:01
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full rounded flex items-start p-2"
+        >
+          Mi primer post con imagen
+        </div>
+        <div
+          className="w-full flex justify-center"
+        >
+          <img
+            alt=""
+            src="https://res.cloudinary.com/manuelev/image/upload/v1623222065/kjrn6fl0g7g9vf7o9j2y.png"
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+      >
+        <div
+          className="flex row mb-2"
+        >
+          <img
+            alt="user_profile"
+            className="h-14 w-14"
+            src="./assets/user.svg"
+          />
+          <div
+            className="grid grid-cols-1 ml-3"
+          >
+            <div
+              className="text-xl font-semibold"
+            >
+              Juanito
+            </div>
+            <div
+              className="text-sm"
+            >
+              ayer a la 1:57
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full rounded flex items-start p-2"
+        >
+          Este post lo verán solo mis amigos
+        </div>
+        <div
+          className="w-full flex justify-center"
+        >
+          <img
+            alt=""
+            src=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+      >
+        <div
+          className="flex row mb-2"
+        >
+          <img
+            alt="user_profile"
+            className="h-14 w-14"
+            src="./assets/user.svg"
+          />
+          <div
+            className="grid grid-cols-1 ml-3"
+          >
+            <div
+              className="text-xl font-semibold"
+            >
+              Juanito
+            </div>
+            <div
+              className="text-sm"
+            >
+              ayer a la 1:57
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full rounded flex items-start p-2"
+        >
+          Soy nuevo en esta red! este es mi nuevo post
+        </div>
+        <div
+          className="w-full flex justify-center"
+        >
+          <img
+            alt=""
+            src=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+      >
+        <div
+          className="flex row mb-2"
+        >
+          <img
+            alt="user_profile"
+            className="h-14 w-14"
+            src="./assets/user.svg"
+          />
+          <div
+            className="grid grid-cols-1 ml-3"
+          >
+            <div
+              className="text-xl font-semibold"
+            >
+              Manuel Espinoza
+            </div>
+            <div
+              className="text-sm"
+            >
+              el martes pasado a las 23:17
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full rounded flex items-start p-2"
+        >
+          probando el segundo post
+        </div>
+        <div
+          className="w-full flex justify-center"
+        >
+          <img
+            alt=""
+            src=""
+          />
+        </div>
+      </div>
+    </div>
+    <div
+      className="w-full flex justify-center"
+    >
+      <div
+        className="bg-gray-600 w-3/5 h-full px-5 py-5 mt-4
+ rounded"
+      >
+        <div
+          className="flex row mb-2"
+        >
+          <img
+            alt="user_profile"
+            className="h-14 w-14"
+            src="./assets/user.svg"
+          />
+          <div
+            className="grid grid-cols-1 ml-3"
+          >
+            <div
+              className="text-xl font-semibold"
+            >
+              Manuel Espinoza
+            </div>
+            <div
+              className="text-sm"
+            >
+              el martes pasado a las 23:17
+            </div>
+          </div>
+        </div>
+        <div
+          className="w-full rounded flex items-start p-2"
+        >
+          probando el primer post
+        </div>
+        <div
+          className="w-full flex justify-center"
+        >
+          <img
+            alt=""
+            src=""
+          />
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+`;

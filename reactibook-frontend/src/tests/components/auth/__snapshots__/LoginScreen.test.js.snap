@@ -1,0 +1,101 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in <LoginScreen /> snapshot should match 1`] = `
+<div
+  className="w-screen h-screen flex justify-center items-center text-white bg-gray-800"
+>
+  <form
+    className="md:w-1/4 sm:w-1/2 bg-gradient-to-b from-primary-400 to-primary-800 rounded-lg shadow-lg p-10"
+    onSubmit={[Function]}
+  >
+    <div
+      className=""
+    >
+      Email:
+    </div>
+    <div
+      className="w-full"
+    >
+      <input
+        autoComplete="off"
+        className="w-full rounded px-2 text-black border border-transparent focus:outline-none focus:ring-2  focus:ring-secondary-100 focus:border-transparent"
+        name="email"
+        onChange={[Function]}
+        placeholder="Email"
+        type="text"
+        value=""
+      />
+      <span
+        className="text-sm text-red-500"
+      />
+    </div>
+    <div
+      className="pt-2"
+    >
+      Password:
+    </div>
+    <div
+      className="w-full"
+    >
+      <input
+        className="w-full rounded px-2 text-black border border-transparent focus:outline-none focus:ring-2  focus:ring-secondary-900 focus:border-transparent"
+        name="password"
+        onChange={[Function]}
+        placeholder="Password"
+        type="password"
+        value=""
+      />
+      <span
+        className="text-sm text-red-500"
+      />
+    </div>
+    <div
+      className="w-full flex justify-center my-3"
+    >
+      <button
+        className="bg-secondary-700 py-1 px-5 rounded shadow font-bold hover:bg-secondary-900"
+        disabled={false}
+        type="submit"
+      >
+        Login
+      </button>
+    </div>
+    <div
+      className="w-full mt-4"
+    >
+      <div
+        className="w-full cursor-pointer"
+        onClick={[Function]}
+      >
+        <div
+          className="flex justify-center"
+        >
+          <img
+            alt="google button"
+            className="h-14 w-14 rounded-full p-1 bg-black bg-opacity-20"
+            src="https://upload.wikimedia.org/wikipedia/commons/5/53/Google_%22G%22_Logo.svg"
+          />
+        </div>
+        <div
+          className="text-center"
+        >
+          <span>
+            Ingresar con Google
+          </span>
+        </div>
+      </div>
+    </div>
+    <div
+      className="w-full text-center cursor-pointer underline mt-4"
+    >
+      <a
+        className=""
+        href="/auth/register"
+        onClick={[Function]}
+      >
+        Crear una nueva cuenta
+      </a>
+    </div>
+  </form>
+</div>
+`;

@@ -1,0 +1,34 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tests in <NavBar/> component snapshot should match 1`] = `
+<div
+  className="flex flex-row p-4 bg-gray-700 w-full fixed
+ bg-gradient-to-b from-primary-400 to-primary-600"
+>
+  <div
+    className="w-2/3 text-xl tracking-wide font-semibold"
+  >
+    <span
+      className="cursor-pointer"
+      onClick={[Function]}
+    >
+      REACTIBOOK
+    </span>
+  </div>
+  <div
+    className="w-1/3 flex justify-end"
+  >
+    <div
+      className="bg-primary-600 px-2 py-1 mx-2"
+    >
+      test
+    </div>
+    <button
+      className="bg-secondary-500 rounded font-bold px-2 py-1"
+      onClick={[Function]}
+    >
+      Logout
+    </button>
+  </div>
+</div>
+`;
